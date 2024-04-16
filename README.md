@@ -2,6 +2,7 @@
 This is a C# project aimed at minimizing cuts in a 3D guillotine cutting problem and generating a txt file containing the cutting plan. Initially, it was just a school assignment, but I decided to incorporate the branch and bound method to achieve better results. Please note that the solution may not be optimal, as some options remain unexplored, such as the order of demand boxes and rotation of cutting.
 
 This algorithm operates as follows:
+
 1.read csv file to build a list of required boxes.
 
 2.Sort all required box dimensions from largest to smallest.
