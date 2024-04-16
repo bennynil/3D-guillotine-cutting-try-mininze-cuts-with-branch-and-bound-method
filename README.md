@@ -10,9 +10,9 @@ This algorithm operates as follows:
 3.Arrange all required boxes in non-decreasing order of dimensions.
 
 4.Proceed with cutting in the specified order 
-4-1.select boxes from non-required ones with the maximum number of similar dimensions and the largest difference in dimensions for cutting. 
-4-2.During cutting, prioritize selecting boxes with similar dimensions. If there are no boxes with similar dimensions available, choose the box with the largest difference in dimensions for cutting.
-4-3.step 4-2 will at most generate 3 non-required boxes.
+  4-1.select boxes from non-required ones with the maximum number of similar dimensions and the largest difference in dimensions for cutting. 
+  4-2.During cutting, prioritize selecting boxes with similar dimensions. If there are no boxes with similar dimensions available, choose the box with the largest difference in dimensions for cutting.
+  4-3.step 4-2 will at most generate 3 non-required boxes.
 
 5.Use the branch and bound method to select non-required boxes for cutting (following the cutting method described in step three).
 output a txt file for cutting plan.
