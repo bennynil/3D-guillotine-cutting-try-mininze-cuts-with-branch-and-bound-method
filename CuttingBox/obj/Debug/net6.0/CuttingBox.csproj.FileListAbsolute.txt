@@ -1,0 +1,15 @@
+D:\project c#\CuttingBox\CuttingBox\bin\Debug\net6.0\CuttingBox.exe
+D:\project c#\CuttingBox\CuttingBox\bin\Debug\net6.0\CuttingBox.deps.json
+D:\project c#\CuttingBox\CuttingBox\bin\Debug\net6.0\CuttingBox.runtimeconfig.json
+D:\project c#\CuttingBox\CuttingBox\bin\Debug\net6.0\CuttingBox.dll
+D:\project c#\CuttingBox\CuttingBox\bin\Debug\net6.0\CuttingBox.pdb
+D:\project c#\CuttingBox\CuttingBox\obj\Debug\net6.0\CuttingBox.csproj.AssemblyReference.cache
+D:\project c#\CuttingBox\CuttingBox\obj\Debug\net6.0\CuttingBox.GeneratedMSBuildEditorConfig.editorconfig
+D:\project c#\CuttingBox\CuttingBox\obj\Debug\net6.0\CuttingBox.AssemblyInfoInputs.cache
+D:\project c#\CuttingBox\CuttingBox\obj\Debug\net6.0\CuttingBox.AssemblyInfo.cs
+D:\project c#\CuttingBox\CuttingBox\obj\Debug\net6.0\CuttingBox.csproj.CoreCompileInputs.cache
+D:\project c#\CuttingBox\CuttingBox\obj\Debug\net6.0\CuttingBox.dll
+D:\project c#\CuttingBox\CuttingBox\obj\Debug\net6.0\refint\CuttingBox.dll
+D:\project c#\CuttingBox\CuttingBox\obj\Debug\net6.0\CuttingBox.pdb
+D:\project c#\CuttingBox\CuttingBox\obj\Debug\net6.0\CuttingBox.genruntimeconfig.cache
+D:\project c#\CuttingBox\CuttingBox\obj\Debug\net6.0\ref\CuttingBox.dll
