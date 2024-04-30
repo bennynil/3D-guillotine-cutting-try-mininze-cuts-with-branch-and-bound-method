@@ -1,4 +1,4 @@
-# heuristic-and-branch-and-bound-method-to-minimize-cuts-take-in-3D-guillotine-cutting-problem
+# 3D-guillotine-cutting-try-mininze-cuts-with-branch-and-bound-method
 This is a C# project aimed at minimizing cuts in a 3D guillotine cutting problem and generating a txt file containing the cutting plan. Initially, it was just a school assignment, but I decided to incorporate the branch and bound method to achieve better results. Please note that the solution may not be optimal, as some options remain unexplored, such as the order of demand boxes and rotation of cutting.
 
 This algorithm operates as follows:
