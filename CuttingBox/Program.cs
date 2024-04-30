@@ -19,10 +19,13 @@ class Program
         List<int> width = new List<int>();
         List<int> height = new List<int>();
         List<int> quantity = new List<int>();
-        int tg = 0;
+        int tg = 1;
         bool startbox = false;
         List<Box> boxes = new List<Box>();
 
+
+
+        
         try
         {
             using(StreamReader reader = new StreamReader(filePath))
@@ -62,6 +65,8 @@ class Program
             Console.WriteLine("bug");
         }
 
+        
+
 
 
         List<Box> needs = new List<Box>();
@@ -77,7 +82,6 @@ class Program
                 Array.Reverse(dimen);
                 Box newBoxes = new Box(dimen);
                 needs.Add(newBoxes);
-
             }
         }
         //sort dimesnsions to non_decreasing order
@@ -94,21 +98,30 @@ class Program
         List<solutionLog> bestSolution = new List<solutionLog>();
 
 
+        int wastev = 0;
+        List<Box> waste = new List<Box>();
 
 
         for(int index = 0; index < needsTemp.Count; index++)
         {
-            preCutBox = Cut(needsTemp[index], preCutBox, result, boxesTemp, bestSolution, ref index, needsTemp);
+            preCutBox = Cut(needsTemp[index], preCutBox, result, boxesTemp, bestSolution, ref index, needsTemp, waste, ref wastev);
+
+
+
+
+
         }
 
         Console.WriteLine(preCutBox);
+
+        Console.WriteLine(wastev);
         int bestCut = preCutBox;
 
         if (useBranchAndBound)
         {
             List<solutionLog> initSol = new List<solutionLog>();
             //use branch and bound to decide which box is choose to generate require box
-            int cutBox = RecursiveCut(boxes, 0, new List<Box>(), ref bestCut, needs, 0, initSol, ref bestSolution);
+            int cutBox = RecursiveCut(boxes, 0, new List<Box>(), ref bestCut, needs, 0, initSol, ref bestSolution, new List<Box>(), ref waste,ref wastev, 0);
         }
 
         
@@ -140,6 +153,8 @@ class Program
         }
 
 
+
+        
         //write answer
         try
         {
@@ -167,9 +182,10 @@ class Program
         {
             Console.WriteLine("write error");
         }
+        
     }
 
-    static int Cut(Box need, int cutBox, List<Box> result, List<Box> boxes, List<solutionLog> solution, ref int index, List<Box> needs)
+    static int Cut(Box need, int cutBox, List<Box> result, List<Box> boxes, List<solutionLog> solution, ref int index, List<Box> needs, List<Box> waste, ref int wastev)
     {
         int bestFitIndex = -1;
         int bestFitRank = -1;
@@ -178,7 +194,6 @@ class Program
         Box TempNeed = need.Copy();
         Box source;
 
-        Console.WriteLine("need: " + need);
         List<int> dimension = new List<int>();
         for (int i = 0; i < boxes.Count; i++)
         {
@@ -211,7 +226,9 @@ class Program
         }
         else
         {
-            return int.MaxValue;
+            waste.Add(need);
+            wastev += need.getVolumn();
+            return cutBox;
         }
 
         Box from = source.Copy();
@@ -283,24 +300,28 @@ class Program
         }
     }
 
-    static int RecursiveCut(List<Box> boxes, int cutBox, List<Box> result, ref int bestCut, List<Box> needs, int index, List<solutionLog> solution, ref List<solutionLog> bsts)
+    static int RecursiveCut(List<Box> boxes, int cutBox, List<Box> result, ref int bestCut, List<Box> needs, int index, List<solutionLog> solution, ref List<solutionLog> bsts, List<Box> waste, ref List<Box> wasteSol, ref int wastevSol, int wastev)
     {
 
-        if (cutBox >= bestCut || index >= needs.Count)
+        if (!isBetterSol(cutBox, bestCut, wastev, wastevSol) || index >= needs.Count)
         {
-
-            if (cutBox <= bestCut && index == needs.Count)
+            if(isBetterSol(cutBox, bestCut, wastev, wastevSol) && index == needs.Count)
             {
                 bestCut = cutBox;
-                Console.WriteLine("bestCut: " + bestCut);
+
+                wasteSol = waste;
+
                 bsts = solution;
+
+                Console.WriteLine("find new best solution with best cut in: " + bestCut + " min waste: " + wasteSol + "testpgg");
             }
+            
             return cutBox;
         }
 
         int mincut = int.MaxValue;
         int cutBoxt = cutBox;
-
+        bool hasBigger = false;
 
         for (int i = 0; i < boxes.Count; i++)
         {
@@ -309,6 +330,9 @@ class Program
 
             if (boxes[i].BiggerThan(need))
             {
+
+                hasBigger = true;
+
                 List<solutionLog> copySolution = solution.ConvertAll(s => s.Copy());
                 cutBox = cutBoxt;
                 List<Box> boxesTemp = boxes.ConvertAll(x => x.Copy());
@@ -396,7 +420,7 @@ class Program
                                          .ToList();
 
 
-                    int newCutBox = RecursiveCut(boxesTemp, cutBox, resultTemp, ref bestCut, needs, indexTemp + 1, copySolution, ref bsts);
+                    int newCutBox = RecursiveCut(boxesTemp, cutBox, resultTemp, ref bestCut, needs, indexTemp + 1, copySolution, ref bsts, waste.ConvertAll(x => x.Copy()), ref wasteSol, ref wastevSol, wastev);
                     if (newCutBox <= mincut)
                     {
                         mincut = newCutBox;
@@ -411,6 +435,23 @@ class Program
                 //Console.WriteLine("logCount: " + copySolution.Count);
             }
         }
+
+        if (!hasBigger)
+        {
+            List<Box> _boxesTemp = boxes.ConvertAll(x => x.Copy());
+            List<Box> _resultTemp = result.ConvertAll(x => x.Copy());
+            List<solutionLog> _copySolution = solution.ConvertAll(s => s.Copy());
+
+            List<Box> wasteCopy = waste.ConvertAll(x => x.Copy());
+            int wasteNew = wastev += needs[index].getVolumn();
+
+            int _newCutBox = RecursiveCut(_boxesTemp, cutBox, _resultTemp, ref bestCut, needs, index + 1, _copySolution, ref bsts, wasteCopy, ref wasteSol, ref wastevSol, wasteNew);
+            if (_newCutBox <= mincut)
+            {
+                mincut = _newCutBox;
+            }
+        }
+        
         return mincut;
     }
 
@@ -480,6 +521,19 @@ class Program
         return false;
     }
 
+    static bool isBetterSol(int nc, int bc, int nw, int bw)
+    {
+        if (nw < bw)
+        {
+            return true;
+        }
+        else if (nc < bc && nw == bw)
+        {
+            return true;
+        }
+
+        return false;
+    }
 }
 
 
@@ -586,6 +640,12 @@ class Box
     public override string ToString()
     {
         return $"{threeDimension[0]}, {threeDimension[1]}, {threeDimension[2]}";
+    }
+
+
+    public int getVolumn()
+    {
+        return threeDimension[0] * threeDimension[1] * threeDimension[2];
     }
 }
 

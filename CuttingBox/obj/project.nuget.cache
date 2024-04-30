@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Lzd+jp6BoY0Gi9omrVo7fHAuxJ/a3yFlsJjX6gWqgnc1EZ0yqWgaO6Dlkk1A5Rx3HX0k1kbWR9aJ/tTJmPhCYg==",
+  "dgSpecHash": "vXwTc7x2LBh3lCvWb4XrES1wKbs02wbpNcVRSPw7SB0X23G+jhTQS/rslOwt/1f/ruLidLidhkjjeAtBoABZtw==",
   "success": true,
-  "projectFilePath": "D:\\project c#\\CuttingBox\\CuttingBox\\CuttingBox.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\0938l\\OneDrive\\桌面\\csharpPro\\cutting\\CuttingBox\\CuttingBox.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\0938l\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.29\\microsoft.windowsdesktop.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\0938l\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.29\\microsoft.netcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\0938l\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.29\\microsoft.aspnetcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\0938l\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.29\\microsoft.netcore.app.host.win-x64.6.0.29.nupkg.sha512"
+  ],
   "logs": []
 }

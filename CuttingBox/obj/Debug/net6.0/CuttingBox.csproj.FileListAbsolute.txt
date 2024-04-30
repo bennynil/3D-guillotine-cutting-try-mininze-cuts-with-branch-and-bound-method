@@ -13,3 +13,17 @@ D:\project c#\CuttingBox\CuttingBox\obj\Debug\net6.0\refint\CuttingBox.dll
 D:\project c#\CuttingBox\CuttingBox\obj\Debug\net6.0\CuttingBox.pdb
 D:\project c#\CuttingBox\CuttingBox\obj\Debug\net6.0\CuttingBox.genruntimeconfig.cache
 D:\project c#\CuttingBox\CuttingBox\obj\Debug\net6.0\ref\CuttingBox.dll
+C:\Users\0938l\OneDrive\桌面\csharpPro\cutting\CuttingBox\bin\Debug\net6.0\CuttingBox.exe
+C:\Users\0938l\OneDrive\桌面\csharpPro\cutting\CuttingBox\bin\Debug\net6.0\CuttingBox.deps.json
+C:\Users\0938l\OneDrive\桌面\csharpPro\cutting\CuttingBox\bin\Debug\net6.0\CuttingBox.runtimeconfig.json
+C:\Users\0938l\OneDrive\桌面\csharpPro\cutting\CuttingBox\bin\Debug\net6.0\CuttingBox.dll
+C:\Users\0938l\OneDrive\桌面\csharpPro\cutting\CuttingBox\bin\Debug\net6.0\CuttingBox.pdb
+C:\Users\0938l\OneDrive\桌面\csharpPro\cutting\CuttingBox\obj\Debug\net6.0\CuttingBox.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\0938l\OneDrive\桌面\csharpPro\cutting\CuttingBox\obj\Debug\net6.0\CuttingBox.AssemblyInfoInputs.cache
+C:\Users\0938l\OneDrive\桌面\csharpPro\cutting\CuttingBox\obj\Debug\net6.0\CuttingBox.AssemblyInfo.cs
+C:\Users\0938l\OneDrive\桌面\csharpPro\cutting\CuttingBox\obj\Debug\net6.0\CuttingBox.csproj.CoreCompileInputs.cache
+C:\Users\0938l\OneDrive\桌面\csharpPro\cutting\CuttingBox\obj\Debug\net6.0\CuttingBox.dll
+C:\Users\0938l\OneDrive\桌面\csharpPro\cutting\CuttingBox\obj\Debug\net6.0\refint\CuttingBox.dll
+C:\Users\0938l\OneDrive\桌面\csharpPro\cutting\CuttingBox\obj\Debug\net6.0\CuttingBox.pdb
+C:\Users\0938l\OneDrive\桌面\csharpPro\cutting\CuttingBox\obj\Debug\net6.0\CuttingBox.genruntimeconfig.cache
+C:\Users\0938l\OneDrive\桌面\csharpPro\cutting\CuttingBox\obj\Debug\net6.0\ref\CuttingBox.dll
